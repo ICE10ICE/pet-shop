@@ -1,0 +1,10 @@
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px; /* Add padding at the bottom to create space */
+  }
+  
+  .filters select {
+    margin-bottom: 20px; /* Adjust the bottom margin of each filter select */
+  }
+  

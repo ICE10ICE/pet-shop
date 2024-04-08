@@ -37,6 +37,31 @@ const About = () => {
             </div>
           </div>
         </div>
+        <div className="stats">
+          <div className="stat">
+            <span>
+              <CountUp start={1000} end={9000} duration={2.75} />
+              <span>+</span>
+            </span>
+            <p class="text">pets adopted</p>
+          </div>
+          <div className="stat">
+            <span>
+              <CountUp start={1000} end={6000} duration={2.75} />
+              <span>+</span>
+            </span>
+            <p class="text"> paw-tnerships</p>
+          </div>
+
+          <div className="stat">
+            <span>
+              <CountUp start={100} end={1000} duration={4} />
+              <span>+</span>
+            </span>
+            <p class="text"> Lives Connected</p>
+          </div>
+          <div></div>
+        </div>
       </section>
       <Footer />
     </>

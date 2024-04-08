@@ -18,19 +18,19 @@ const footer = () => {
                     
                 </p>
 
-                <p className="footer-company-name">Copyright © 2023 <strong>adoptadoggo</strong> All rights reserved</p>
+                <p className="footer-company-name">Copyright © 2021 <strong>adoptadoggo</strong> All rights reserved</p>
             </div>
 
             <div className="footer-center">
                 <div>
                     <i className="fa fa-map-marker"></i>
-                    <p><span>Nepal</span>
-                        kathmandu</p>
+                    <p><span>Dhanbad</span>
+                        Jharkhand</p>
                 </div>
 
                 <div>
                     <i className="fa fa-phone"></i>
-                    <p> 9********</p>
+                    <p>+91 9********0</p>
                 </div>
                 <div>
                     <i className="fa fa-envelope"></i>

@@ -1,6 +1,20 @@
+import React, { useState } from 'react';
 import PetCard from "./PetCard";
 import "./PetShop.css";
+import "./PetFilter.css";
+
 function PetShop() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filters, setFilters] = useState({
+    breed: '',
+    color: '',
+    size: '',
+    sex: '',
+    ageRange: '',
+    youngestChildAge: '',
+    location: ''
+  });
+
   const dogs = [
     {
       weight: {
@@ -185,21 +199,101 @@ function PetShop() {
     },
   ];
 
+  const handleSearch = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const handleFilterChange = (filterName, value) => {
+    setFilters(prevFilters => ({
+      ...prevFilters,
+      [filterName]: value
+    }));
+  };
+
+  const filteredDogs = dogs.filter((dog) => {
+    // Filter logic based on search query and filters
+    const matchesSearchQuery = dog.name.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesBreed = filters.breed === '' || dog.breed === filters.breed;
+    const matchesColor = filters.color === '' || dog.color === filters.color;
+    const matchesSize = filters.size === '' || dog.size === filters.size;
+    const matchesSex = filters.sex === '' || dog.sex === filters.sex;
+    const matchesAgeRange = filters.ageRange === '' || dog.ageRange === filters.ageRange;
+    const matchesYoungestChildAge = filters.youngestChildAge === '' || dog.youngestChildAge === filters.youngestChildAge;
+    const matchesLocation = filters.location === '' || dog.location === filters.location;
+
+    return matchesSearchQuery && matchesBreed && matchesColor && matchesSize && matchesSex && matchesAgeRange && matchesYoungestChildAge && matchesLocation;
+  });
+
   return (
     <>
-      <div className="Shop">
-        <h1 className="PetShop-heading">Welcome to your dream shop!</h1>
+      <div className="Home">
+        <h1 className="Pet-shop heading">Welcome to the commuinity!</h1>
+        {/* Add search bar */}
+        <input
+          type="text"
+          placeholder="Search for a dog..."
+          value={searchQuery}
+          onChange={handleSearch}
+          className="search-bar"
+        />
+      </div>
+      <div className="filter-container">
+        {/* Add filter components */}
+        <div className="filters">
+          {/* Breed filter */}
+          <select onChange={(e) => handleFilterChange('breed', e.target.value)}>
+            <option value="">Select Breed</option>
+            {/* Populate options dynamically based on available breeds */}
+            {/* Example: <option value="Labrador">Labrador</option> */}
+          </select>
+          {/* Color filter */}
+          <select onChange={(e) => handleFilterChange('color', e.target.value)}>
+            <option value="">Select Color</option>
+            {/* Populate options dynamically based on available colors */}
+            {/* Example: <option value="Black">Black</option> */}
+          </select>
+          {/* Size filter */}
+          <select onChange={(e) => handleFilterChange('size', e.target.value)}>
+            <option value="">Select Size</option>
+            {/* Populate options dynamically based on available sizes */}
+            {/* Example: <option value="Small">Small</option> */}
+          </select>
+          {/* Sex filter */}
+          <select onChange={(e) => handleFilterChange('sex', e.target.value)}>
+            <option value="">Select Sex</option>
+            {/* Populate options dynamically based on available sexes */}
+            {/* Example: <option value="Male">Male</option> */}
+          </select>
+          {/* Age Range filter */}
+          <select onChange={(e) => handleFilterChange('ageRange', e.target.value)}>
+            <option value="">Select Age Range</option>
+            {/* Populate options dynamically based on available age ranges */}
+            {/* Example: <option value="0-1">0-1</option> */}
+          </select>
+          {/* Age of Youngest Child in Home filter */}
+          <select onChange={(e) => handleFilterChange('youngestChildAge', e.target.value)}>
+            <option value="">Select Age of Youngest Child in Home</option>
+            {/* Populate options dynamically based on available age ranges */}
+            {/* Example: <option value="0-2">0-2</option> */}
+          </select>
+          {/* Location filter */}
+          <select onChange={(e) => handleFilterChange('location', e.target.value)}>
+            <option value="">Select Location</option>
+            {/* Populate options dynamically based on available locations */}
+            {/* Example: <option value="New York">New York</option> */}
+          </select>
+        </div>
       </div>
       <div>
-        {dogs.map((val) => (
+        {filteredDogs.map((dog) => (
           <PetCard
-            key={val.id}
-            life={val.life_span}
-            name={val.name}
-            breed={val.breed_group}
-            image={val.image} // Check if 'image' exists
-            price={val.price}
-            temperament={val.temperament}
+            key={dog.id}
+            life={dog.life_span}
+            name={dog.name}
+            breed={dog.breed_group}
+            image={dog.image}
+            price={dog.price} // Assuming you have 'price' in your dog object
+            temperament={dog.temperament}
           />
         ))}
       </div>

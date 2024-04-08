@@ -72,7 +72,7 @@ const Contact = () => {
                     <div className="para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare purus ut orci tempor, et ultricies ipsum hendrerit. Sed mattis vestibulum tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent tincidunt risus eu diam venenatis ultrices. Aenean nisi magna, commodo ut malesuada quis, porttitor non mauris. Etiam non tincidunt dolor. Morbi bibendum aliquet metus a ultrices. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget condimentum metus. In hendrerit placerat rhoncus. Fusce dapibus nisl sem. Fusce nisi velit, sagittis sed augue ut, sodales gravida metus. Ut congue ex sed sem faucibus, quis ultrices nulla pretium.</div>
                     <div className="motto">Animal safety | Adoption | Building new homes </div>
               </div>
-                <div className="footer-text"> @2023| by adoptadoggo foundation</div>
+                <div className="footer-text"> @2023| by adoptme foundation</div>
                 <div className="icon-section">
                 <a href={() => false}><FacebookIcon /></a>
                     <a href={() => false}><InstagramIcon /></a>
