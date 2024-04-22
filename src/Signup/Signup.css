@@ -1,0 +1,54 @@
+/* SignupForm.css */
+
+/* Container */
+.container {
+    padding-top: 50px;
+  }
+  
+  /* Card */
+  .card {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Card body */
+  .card-body {
+    padding: 40px;
+  }
+  
+  /* Image */
+  .img-fluid {
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+  }
+  
+  /* Form title */
+  .form-title {
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  /* Input fields */
+  .form-control {
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+    padding: 12px;
+    margin-bottom: 20px;
+  }
+  
+  /* Submit button */
+  .btn-submit {
+    border-radius: 10px;
+    padding: 12px 30px;
+    font-weight: bold;
+  }
+  
+  /* Link */
+  .link {
+    font-weight: bold;
+    color: #ffc107;
+  }
+  
